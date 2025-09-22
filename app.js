@@ -25,11 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // A synth that sounds like a singing bowl
     const bowlSynth = new Tone.MetalSynth({
         frequency: 200,
-        harmonicity: 5.1,
-        modulationIndex: 32,
-        resonance: 4000,
-        octaves: 1.5,
-        envelope: { attack: 0.001, decay: 1.4, release: 0.2 },
+        harmonicity: 2.5,
+        modulationIndex: 10,
+        resonance: 3000,
+        octaves: 2,
+        envelope: {
+            attack: 0.005,
+            decay: 4,
+            release: 1.4
+        },
     }).connect(volume);
 
     // --- Music Theory ---
