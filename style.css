@@ -1,0 +1,222 @@
+/* --- Basic Reset & Font --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #EAEBF0; /* Light, calming grey */
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* --- Main App Container --- */
+#app-container {
+    width: 100%;
+    max-width: 800px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid #DDE2E8;
+    padding-bottom: 1rem;
+}
+
+header h1 {
+    font-weight: 600;
+    color: #3B4A66;
+}
+
+header p {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #7A89A3;
+}
+
+/* --- Visualizer --- */
+#visualizer-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #F4F7F9;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #DDE2E8;
+}
+
+/* --- Controls & Playback Wrapper --- */
+#controls-playback-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* --- Controls --- */
+.controls-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    background: #F9FAFC;
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid #DDE2E8;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.control-group label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #5A6982;
+}
+
+/* --- Sliders --- */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #DDE2E8;
+    border-radius: 5px;
+    outline: none;
+    transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4A90E2; /* Calming blue */
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid #FFF;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4A90E2;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid #FFF;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* --- Select Dropdown --- */
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #DDE2E8;
+    background-color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* --- Playback --- */
+.playback-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: #F9FAFC;
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid #DDE2E8;
+}
+
+.main-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.generation-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* --- Buttons --- */
+button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#play-pause-btn {
+    background-color: #4A90E2;
+    color: white;
+    min-width: 100px;
+}
+
+#play-pause-btn:hover {
+    background-color: #357ABD;
+}
+
+#play-pause-btn.playing {
+    background-color: #E94B3C; /* Contrasting color for pause */
+}
+#play-pause-btn.playing:hover {
+    background-color: #C0392B;
+}
+
+#generate-btn, #randomize-btn {
+    background-color: #FFF;
+    color: #4A90E2;
+    border: 1px solid #DDE2E8;
+}
+
+#generate-btn:hover, #randomize-btn:hover {
+    background-color: #F4F7F9;
+    border-color: #C8D0D9;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #DDE2E8;
+    font-size: 0.8rem;
+    color: #9AA8C1;
+}
+
+/* --- Responsive Design --- */
+@media (min-width: 768px) {
+    #controls-playback-wrapper {
+        grid-template-columns: 2fr 1fr;
+    }
+    .playback-container {
+        justify-content: center;
+    }
+}

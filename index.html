@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singing Bowl Serenity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <header>
+            <h1>Singing Bowl Serenity</h1>
+            <p>Create your own unique soundscape</p>
+        </header>
+
+        <div id="visualizer-container">
+            <!-- Visuals will be generated here by app.js -->
+        </div>
+
+        <main id="controls-playback-wrapper">
+            <div class="controls-container">
+                <div class="control-group">
+                    <label for="bowls-slider">Number of Bowls: <span id="bowls-value">3</span></label>
+                    <input type="range" id="bowls-slider" min="1" max="7" value="3" class="slider">
+                </div>
+
+                <div class="control-group">
+                    <label for="scale-select">Key/Scale</label>
+                    <select id="scale-select">
+                        <option value="random">Random</option>
+                        <option value="major">Major</option>
+                        <option value="minor-pentatonic" selected>Minor Pentatonic</option>
+                        <option value="phrygian">Phrygian</option>
+                        <option value="lydian">Lydian</option>
+                        <option value="whole-tone">Whole Tone</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="tempo-slider">Tempo: <span id="tempo-value">80</span> BPM</label>
+                    <input type="range" id="tempo-slider" min="30" max="150" value="80" class="slider">
+                </div>
+
+                <div class="control-group">
+                    <label for="reverb-slider">Ambience: <span id="reverb-value">0.5</span></label>
+                    <input type="range" id="reverb-slider" min="0" max="1" step="0.05" value="0.5" class="slider">
+                </div>
+
+                <div class="control-group">
+                    <label for="loop-slider">Loop Length: <span id="loop-value">16</span> beats</label>
+                    <input type="range" id="loop-slider" min="4" max="32" step="4" value="16" class="slider">
+                </div>
+            </div>
+
+            <div class="playback-container">
+                <div class="main-controls">
+                    <button id="play-pause-btn">Play</button>
+                    <div class="volume-control">
+                        <label for="volume-slider">Volume</label>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.8" class="slider">
+                    </div>
+                </div>
+                <div class="generation-controls">
+                    <button id="generate-btn">Generate New</button>
+                    <button id="randomize-btn">Randomize</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built by Jules. Powered by Tone.js</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
